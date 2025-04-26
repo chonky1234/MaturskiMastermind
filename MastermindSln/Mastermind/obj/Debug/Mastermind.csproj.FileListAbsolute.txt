@@ -10,3 +10,14 @@ D:\PROGRAMIRANJE\MaturskiMastermind\MastermindSln\Mastermind\obj\Debug\Mastermin
 D:\PROGRAMIRANJE\MaturskiMastermind\MastermindSln\Mastermind\obj\Debug\Mastermind.exe
 D:\PROGRAMIRANJE\MaturskiMastermind\MastermindSln\Mastermind\obj\Debug\Mastermind.pdb
 D:\PROGRAMIRANJE\MaturskiMastermind\MastermindSln\Mastermind\obj\Debug\Mastermind.IgracPogadja.resources
+D:\PROGRAMIRANJE\C#\MastermindMATURSKI\MaturskiMastermind\MastermindSln\Mastermind\bin\Debug\Mastermind.exe.config
+D:\PROGRAMIRANJE\C#\MastermindMATURSKI\MaturskiMastermind\MastermindSln\Mastermind\bin\Debug\Mastermind.exe
+D:\PROGRAMIRANJE\C#\MastermindMATURSKI\MaturskiMastermind\MastermindSln\Mastermind\bin\Debug\Mastermind.pdb
+D:\PROGRAMIRANJE\C#\MastermindMATURSKI\MaturskiMastermind\MastermindSln\Mastermind\obj\Debug\Mastermind.csproj.AssemblyReference.cache
+D:\PROGRAMIRANJE\C#\MastermindMATURSKI\MaturskiMastermind\MastermindSln\Mastermind\obj\Debug\Mastermind.Form1.resources
+D:\PROGRAMIRANJE\C#\MastermindMATURSKI\MaturskiMastermind\MastermindSln\Mastermind\obj\Debug\Mastermind.IgracPogadja.resources
+D:\PROGRAMIRANJE\C#\MastermindMATURSKI\MaturskiMastermind\MastermindSln\Mastermind\obj\Debug\Mastermind.Properties.Resources.resources
+D:\PROGRAMIRANJE\C#\MastermindMATURSKI\MaturskiMastermind\MastermindSln\Mastermind\obj\Debug\Mastermind.csproj.GenerateResource.cache
+D:\PROGRAMIRANJE\C#\MastermindMATURSKI\MaturskiMastermind\MastermindSln\Mastermind\obj\Debug\Mastermind.csproj.CoreCompileInputs.cache
+D:\PROGRAMIRANJE\C#\MastermindMATURSKI\MaturskiMastermind\MastermindSln\Mastermind\obj\Debug\Mastermind.exe
+D:\PROGRAMIRANJE\C#\MastermindMATURSKI\MaturskiMastermind\MastermindSln\Mastermind\obj\Debug\Mastermind.pdb

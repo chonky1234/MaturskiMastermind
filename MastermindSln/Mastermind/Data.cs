@@ -26,7 +26,8 @@ namespace Mastermind
             plava,
             crvena,
             ljubicasta,
-            braon
+            braon,
+            gugugaga
         }
 
     }
