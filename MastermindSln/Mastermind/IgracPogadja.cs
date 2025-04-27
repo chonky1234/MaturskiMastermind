@@ -269,7 +269,7 @@ namespace Mastermind
                     if ((int)Polja[red, i].boja == rez[j])
                     {
                         rezultat += "skoro ";
-                        Polja[red, i].boja = Data.Boje.gugugaga;
+                        //Polja[red, i].boja = Data.Boje.gugugaga;
                         rez[i] = 77;
                     }
                     //rez[i] = 77;
@@ -285,7 +285,7 @@ namespace Mastermind
 
 
             odgovori[red].Text = rezultat;
-            MessageBox.Show(rezultat);
+            //MessageBox.Show(rezultat);
 
             kolona = 0;
             red++;
