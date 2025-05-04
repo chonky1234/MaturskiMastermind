@@ -70,6 +70,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.red1 = new Mastermind.Red();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -463,11 +464,19 @@
             this.label6.TabIndex = 41;
             this.label6.Text = "label6";
             // 
+            // red1
+            // 
+            this.red1.Location = new System.Drawing.Point(276, 445);
+            this.red1.Name = "red1";
+            this.red1.Size = new System.Drawing.Size(517, 40);
+            this.red1.TabIndex = 42;
+            // 
             // IgracPogadja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 508);
+            this.Controls.Add(this.red1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -589,5 +598,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private Red red1;
     }
 }

@@ -269,8 +269,8 @@ namespace Mastermind
                     if ((int)Polja[red, i].boja == rez[j])
                     {
                         rezultat += "skoro ";
-                        //Polja[red, i].boja = Data.Boje.gugugaga;
-                        rez[i] = 77;
+                        Polja[red, i].boja = Data.Boje.gugugaga;
+                        rez[j] = 77;
                     }
                     //rez[i] = 77;
                 }
