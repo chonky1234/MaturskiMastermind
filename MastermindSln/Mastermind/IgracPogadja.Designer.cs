@@ -466,10 +466,11 @@
             // 
             // red1
             // 
-            this.red1.Location = new System.Drawing.Point(276, 445);
+            this.red1.Location = new System.Drawing.Point(179, 441);
             this.red1.Name = "red1";
             this.red1.Size = new System.Drawing.Size(517, 40);
             this.red1.TabIndex = 42;
+            this.red1.Load += new System.EventHandler(this.red1_Load);
             // 
             // IgracPogadja
             // 

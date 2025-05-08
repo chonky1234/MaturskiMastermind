@@ -195,97 +195,27 @@ namespace Mastermind
             rezultat = "";
 
             int[] rez = new int[4];
+            int[] niz = new int[4];
 
             for (int i = 0; i < 4; i++)
             {
                 rez[i] = (int) Resenje[i].boja;
             }
 
-
-/*            for (int i = 0; i < 6; i++)
-            {
-                for (int j = 0; j < 4; j++)
-                {
-                    MessageBox.Show(Polja[i, j].picture.BackColor.ToString());
-                }
-            }*/
-
-            
-
-            /*for (int i = 0; i < 4; i++)
-            {
-                //MessageBox.Show(Polja[red, i].boja.ToString());
-
-                //if (rez.Contains<int>(   (int) Polja[red,i].boja    ))
-
-                if (rez.Contains<int>((int)Polja[red, i].boja))3
-                {
-                    if ((int) Polja[red,i].boja == rez[i])
-                    {
-                        rezultat += "tacno ";
-                    }
-                    else
-                    {
-                        rezultat += "skoro ";
-                    }
-
-                    //rez[i] = 77;
-                    Polja[red, i].boja = Data.Boje.gugugaga;
-                }
-
-            }*/
-
-
-
-
-
             for (int i = 0; i < 4; i++)
             {
-                //MessageBox.Show(Polja[red, i].boja.ToString());
-
-                //if (rez.Contains<int>(   (int) Polja[red,i].boja    ))
-
-              
-                if ((int) Polja[red,i].boja == rez[i])
-                {
-                    rezultat += "tacno ";
-                    Polja[red, i].boja = Data.Boje.gugugaga;
-                    rez[i] = 77;
-                }
-                //rez[i] = 77;
-                    
-                
-                
-
-            }
-            for (int i = 0; i < 4; i++)
-            {
-                //MessageBox.Show(Polja[red, i].boja.ToString());
-
-                //if (rez.Contains<int>(   (int) Polja[red,i].boja    ))
-
-                for (int j = 0; j < 4; j++)
-                {
-                    if ((int)Polja[red, i].boja == rez[j])
-                    {
-                        rezultat += "skoro ";
-                        Polja[red, i].boja = Data.Boje.gugugaga;
-                        rez[j] = 77;
-                    }
-                    //rez[i] = 77;
-                }
-            
-                //Polja[red, i].boja = Data.Boje.gugugaga;
-
+                niz[i] = (int)Polja[red,i].boja;
             }
 
 
 
 
+            string s = Data.ProveriResenje(niz, rez);
 
 
-            odgovori[red].Text = rezultat;
-            //MessageBox.Show(rezultat);
+
+
+            odgovori[red].Text = s;
 
             kolona = 0;
             red++;
@@ -297,6 +227,11 @@ namespace Mastermind
             pictureBox26.Visible = true;
             pictureBox27.Visible = true;
             pictureBox28.Visible = true;
+        }
+
+        private void red1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
