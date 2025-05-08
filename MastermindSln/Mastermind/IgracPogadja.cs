@@ -12,11 +12,13 @@ namespace Mastermind
 {
     public partial class IgracPogadja : Form
     {
+        public Red[] redovi = new Red[6];
 
-        Data.slika[] Resenje = new Data.slika[4];
+        Red resenje;
+
         Data.slika[,] Polja = new Data.slika[6, 4];
         int red = 0;
-        int kolona = 0;
+        public static int kolona = 0;
         string rezultat;
 
         Label[] odgovori = new Label[6];
@@ -30,53 +32,18 @@ namespace Mastermind
             Setup();
             GenerisiBoje();
 
-            
+            resenje.Visible = false;
         }
 
         private void Setup()
         {
-            odgovori[0] = label1;
-            odgovori[1] = label2;
-            odgovori[2] = label3;
-            odgovori[3] = label4;
-            odgovori[4] = label5;
-            odgovori[5] = label6;
-
-
-            Polja[0, 0].picture = pictureBox1;
-            Polja[0, 1].picture = pictureBox2;
-            Polja[0, 2].picture = pictureBox3;
-            Polja[0, 3].picture = pictureBox4;
-
-            Polja[1, 0].picture = pictureBox5;
-            Polja[1, 1].picture = pictureBox6;
-            Polja[1, 2].picture = pictureBox7;
-            Polja[1, 3].picture = pictureBox8;
-
-            Polja[2, 0].picture = pictureBox9;
-            Polja[2, 1].picture = pictureBox10;
-            Polja[2, 2].picture = pictureBox11;
-            Polja[2, 3].picture = pictureBox12;
-
-            Polja[3, 0].picture = pictureBox13;
-            Polja[3, 1].picture = pictureBox14;
-            Polja[3, 2].picture = pictureBox15;
-            Polja[3, 3].picture = pictureBox16;
-
-            Polja[4, 0].picture = pictureBox17;
-            Polja[4, 1].picture = pictureBox18;
-            Polja[4, 2].picture = pictureBox19;
-            Polja[4, 3].picture = pictureBox20;
-
-            Polja[5, 0].picture = pictureBox21;
-            Polja[5, 1].picture = pictureBox22;
-            Polja[5, 2].picture = pictureBox23;
-            Polja[5, 3].picture = pictureBox24;
-
-            Resenje[0].picture = pictureBox25;
-            Resenje[1].picture = pictureBox26;
-            Resenje[2].picture = pictureBox27;
-            Resenje[3].picture = pictureBox28;
+            redovi[0] = red1;
+            redovi[1] = red2;
+            redovi[2] = red3;
+            redovi[3] = red4;
+            redovi[4] = red5;
+            redovi[5] = red6;
+            resenje = red7;
         }
 
         void GenerisiBoje()
@@ -88,99 +55,113 @@ namespace Mastermind
             for (int i = 0; i < 4; i++)
             {
                 b = r.Next(1, 6);
-                switch (b)
+
+                resenje.StaviBoju(b, i);
+                /*switch (b)
                 {
                     case 1:
-                        Resenje[i].boja = Data.Boje.zuta;
-                        Resenje[i].picture.BackColor = Color.Yellow;
+                        resenje.StaviBoju(b, i);
                         break;
                     case 2:
-                        Resenje[i].boja = Data.Boje.zelena;
-                        Resenje[i].picture.BackColor = Color.Green;
+                        resenje.StaviBoju(b, i);
                         break;
                     case 3:
-                        Resenje[i].boja = Data.Boje.plava;
-                        Resenje[i].picture.BackColor = Color.Blue;
+                        resenje.StaviBoju(b, i);
                         break;
                     case 4:
-                        Resenje[i].boja = Data.Boje.crvena;
-                        Resenje[i].picture.BackColor = Color.Red;
+                        resenje.StaviBoju(b, i);
                         break;
                     case 5:
-                        Resenje[i].boja = Data.Boje.ljubicasta;
-                        Resenje[i].picture.BackColor = Color.Purple;
+                        resenje.StaviBoju(b, i);
                         break;
                     case 6:
-                        Resenje[i].boja = Data.Boje.braon;
-                        Resenje[i].picture.BackColor = Color.Brown;
+                        resenje.StaviBoju(b, i);
                         break;
 
-                }
+                }*/
                     
             }
         }
 
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void IgracPogadja_Load(object sender, EventArgs e)
         {
 
         }
 
+        public void namestiKolonu()
+        {
+            if (redovi[red].slike[0].BackColor == DefaultBackColor)
+            {
+                kolona = 0;
+                return;
+            }
+            if (redovi[red].slike[1].BackColor == DefaultBackColor)
+            {
+                kolona = 1;
+                return;
+            }
+            if (redovi[red].slike[2].BackColor == DefaultBackColor)
+            {
+                kolona = 2;
+                return; ;
+            }
+            if (redovi[red].slike[3].BackColor == DefaultBackColor)
+            {
+                kolona = 3;
+                return;
+            }
+
+
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            Polja[red, kolona].picture.BackColor = Color.Yellow;
-            Polja[red, kolona].boja = Data.Boje.zuta;
-           // MessageBox.Show(Polja[red, kolona].picture.BackColor.ToString());
-            if (kolona < 3) kolona++;
+            namestiKolonu();
+            redovi[red].StaviBoju(0, kolona);
+            namestiKolonu();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Polja[red, kolona].picture.BackColor = Color.Green;
-            Polja[red, kolona].boja = Data.Boje.zelena;
-            // MessageBox.Show(Polja[red, kolona].picture.BackColor.ToString());
-            if (kolona < 3) kolona++;
+            namestiKolonu();
+            redovi[red].StaviBoju(1, kolona);
+            namestiKolonu();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Polja[red, kolona].picture.BackColor = Color.Blue;
-            Polja[red, kolona].boja = Data.Boje.plava;
-            // MessageBox.Show(Polja[red, kolona].picture.BackColor.ToString());
-            if (kolona < 3) kolona++;
+            namestiKolonu();
+            redovi[red].StaviBoju(2, kolona);
+            namestiKolonu();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Polja[red, kolona].picture.BackColor = Color.Red;
-            Polja[red, kolona].boja = Data.Boje.crvena;
-            //  MessageBox.Show(Polja[red, kolona].picture.BackColor.ToString());
-            if (kolona < 3) kolona++;
+            namestiKolonu();
+            redovi[red].StaviBoju(3, kolona);
+            namestiKolonu();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Polja[red, kolona].picture.BackColor = Color.Purple;
-            Polja[red, kolona].boja = Data.Boje.ljubicasta;
-            //MessageBox.Show(Polja[red, kolona].picture.BackColor.ToString());
-            if (kolona < 3) kolona++;
+            namestiKolonu();
+            redovi[red].StaviBoju(4, kolona);
+            namestiKolonu();
         }
         private void button6_Click(object sender, EventArgs e)
         {
-            Polja[red, kolona].picture.BackColor = Color.Brown;
-            Polja[red, kolona].boja = Data.Boje.braon;
-            //MessageBox.Show(Polja[red, kolona].picture.BackColor.ToString());
-            if (kolona < 3) kolona++;
+            namestiKolonu();
+            redovi[red].StaviBoju(5, kolona);
+            namestiKolonu();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < 4; i++)
+        /*    for (int i = 0; i < 4; i++)
             {
                 if (Polja[red,i].picture.BackColor == DefaultBackColor)
                 {
@@ -188,7 +169,7 @@ namespace Mastermind
                     return;
                 }
 
-            }
+            }*/
 
 
 
@@ -199,12 +180,12 @@ namespace Mastermind
 
             for (int i = 0; i < 4; i++)
             {
-                rez[i] = (int) Resenje[i].boja;
+                rez[i] = resenje.indexBoja[i];
             }
 
             for (int i = 0; i < 4; i++)
             {
-                niz[i] = (int)Polja[red,i].boja;
+                niz[i] = redovi[red].indexBoja[i];
             }
 
 
@@ -215,7 +196,7 @@ namespace Mastermind
 
 
 
-            odgovori[red].Text = s;
+            redovi[red].StaviResenje(s);
 
             kolona = 0;
             red++;
@@ -223,10 +204,7 @@ namespace Mastermind
 
         private void button8_Click(object sender, EventArgs e)
         {
-            pictureBox25.Visible = true;
-            pictureBox26.Visible = true;
-            pictureBox27.Visible = true;
-            pictureBox28.Visible = true;
+            resenje.Visible = true;
         }
 
         private void red1_Load(object sender, EventArgs e)

@@ -28,85 +28,87 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.boja1 = new System.Windows.Forms.PictureBox();
+            this.boja2 = new System.Windows.Forms.PictureBox();
+            this.boja3 = new System.Windows.Forms.PictureBox();
+            this.boja4 = new System.Windows.Forms.PictureBox();
+            this.resenje = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.boja1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boja2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boja3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boja4)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // boja1
             // 
-            this.label1.Location = new System.Drawing.Point(234, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(222, 23);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "label1";
+            this.boja1.Location = new System.Drawing.Point(3, 3);
+            this.boja1.Name = "boja1";
+            this.boja1.Size = new System.Drawing.Size(40, 34);
+            this.boja1.TabIndex = 0;
+            this.boja1.TabStop = false;
+            this.boja1.Click += new System.EventHandler(this.boja1_Click);
             // 
-            // pictureBox4
+            // boja2
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(164, 7);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(34, 23);
-            this.pictureBox4.TabIndex = 40;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.boja2.Location = new System.Drawing.Point(72, 3);
+            this.boja2.Name = "boja2";
+            this.boja2.Size = new System.Drawing.Size(40, 34);
+            this.boja2.TabIndex = 1;
+            this.boja2.TabStop = false;
+            this.boja2.Click += new System.EventHandler(this.boja2_Click);
             // 
-            // pictureBox3
+            // boja3
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(109, 7);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(34, 23);
-            this.pictureBox3.TabIndex = 39;
-            this.pictureBox3.TabStop = false;
+            this.boja3.Location = new System.Drawing.Point(142, 3);
+            this.boja3.Name = "boja3";
+            this.boja3.Size = new System.Drawing.Size(40, 34);
+            this.boja3.TabIndex = 2;
+            this.boja3.TabStop = false;
+            this.boja3.Click += new System.EventHandler(this.boja3_Click);
             // 
-            // pictureBox2
+            // boja4
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(56, 7);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(34, 23);
-            this.pictureBox2.TabIndex = 38;
-            this.pictureBox2.TabStop = false;
+            this.boja4.Location = new System.Drawing.Point(222, 3);
+            this.boja4.Name = "boja4";
+            this.boja4.Size = new System.Drawing.Size(40, 34);
+            this.boja4.TabIndex = 3;
+            this.boja4.TabStop = false;
+            this.boja4.Click += new System.EventHandler(this.boja4_Click);
             // 
-            // pictureBox1
+            // resenje
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBox1.Location = new System.Drawing.Point(5, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 23);
-            this.pictureBox1.TabIndex = 37;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.resenje.AutoSize = true;
+            this.resenje.Location = new System.Drawing.Point(361, 3);
+            this.resenje.Name = "resenje";
+            this.resenje.Size = new System.Drawing.Size(0, 16);
+            this.resenje.TabIndex = 4;
             // 
             // Red
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.resenje);
+            this.Controls.Add(this.boja4);
+            this.Controls.Add(this.boja3);
+            this.Controls.Add(this.boja2);
+            this.Controls.Add(this.boja1);
             this.Name = "Red";
-            this.Size = new System.Drawing.Size(517, 40);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Size = new System.Drawing.Size(441, 48);
+            this.Load += new System.EventHandler(this.Red_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.boja1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boja2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boja3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boja4)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
+
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox boja1;
+        private System.Windows.Forms.PictureBox boja2;
+        private System.Windows.Forms.PictureBox boja3;
+        private System.Windows.Forms.PictureBox boja4;
+        private System.Windows.Forms.Label resenje;
     }
 }

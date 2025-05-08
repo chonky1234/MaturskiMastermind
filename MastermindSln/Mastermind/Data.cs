@@ -13,6 +13,7 @@ namespace Mastermind
     internal class Data
     {
 
+
         public struct slika
         {
             public PictureBox picture;
@@ -29,6 +30,8 @@ namespace Mastermind
             braon,
             gugugaga
         }
+
+
 
 
         public static string ProveriResenje(int[] niz, int[] rez)
