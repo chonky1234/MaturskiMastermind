@@ -12,28 +12,47 @@ namespace Mastermind
 {
     public partial class IgracPogadja : Form
     {
-        public Red[] redovi = new Red[6];
+        public Red[] redovi = new Red[7];
 
         Red resenje;
 
-        Data.slika[,] Polja = new Data.slika[6, 4];
+        //Data.slika[,] Polja = new Data.slika[6, 4];
         int red = 0;
         public static int kolona = 0;
         string rezultat;
 
         Label[] odgovori = new Label[6];
 
+        public string player;
 
 
-        public IgracPogadja()
+
+        public IgracPogadja(string igrac)
         {
             InitializeComponent();
+            player = igrac;
 
-            Setup();
-            GenerisiBoje();
 
-            resenje.Visible = false;
+            if (igrac == "covek")
+            {
+
+                Setup();
+                GenerisiBoje();
+
+                resenje.Visible = false;
+            }
+
+            if (igrac == "kompjuter")
+            {
+                Setup();
+                red = 6;
+                button7.Hide();
+            }
+
+
         }
+
+
 
         private void Setup()
         {
@@ -43,7 +62,7 @@ namespace Mastermind
             redovi[3] = red4;
             redovi[4] = red5;
             redovi[5] = red6;
-            resenje = red7;
+            redovi[6] = resenje = red7;
         }
 
         void GenerisiBoje()
@@ -93,29 +112,14 @@ namespace Mastermind
 
         public void namestiKolonu()
         {
-            if (redovi[red].slike[0].BackColor == DefaultBackColor)
+            for (int i = 0; i < 4; i++)
             {
-                kolona = 0;
-                return;
+                if (redovi[red].slike[i].BackColor == DefaultBackColor)
+                {
+                    kolona = i;
+                    return;
+                }
             }
-            if (redovi[red].slike[1].BackColor == DefaultBackColor)
-            {
-                kolona = 1;
-                return;
-            }
-            if (redovi[red].slike[2].BackColor == DefaultBackColor)
-            {
-                kolona = 2;
-                return; ;
-            }
-            if (redovi[red].slike[3].BackColor == DefaultBackColor)
-            {
-                kolona = 3;
-                return;
-            }
-
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -191,23 +195,48 @@ namespace Mastermind
 
 
 
-            string s = Data.ProveriResenje(niz, rez);
+            Data.resenje t = Data.ProveriResenje(niz, rez);
 
 
 
 
-            redovi[red].StaviResenje(s);
+            redovi[red].StaviResenje(t.tacno + " " + t.skoro);
 
             kolona = 0;
-            red++;
+            if (red<6)
+            {
+                red++;
+            }
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            resenje.Visible = true;
+            if (player == "covek")
+            {
+                resenje.Visible = true;
+            }
+
+            if (player == "kompjuter")
+            {
+                button1.Hide();
+                button2.Hide();
+                button3.Hide();
+                button4.Hide();
+                button5.Hide();
+                button6.Hide();
+
+
+                Data.KompjuterPogadja(redovi[7].indexBoja);
+            }
+
         }
 
         private void red1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void red2_Load(object sender, EventArgs e)
         {
 
         }

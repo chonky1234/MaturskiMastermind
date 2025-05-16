@@ -14,6 +14,14 @@ namespace Mastermind
     {
 
 
+        public struct resenje
+        {
+            public int tacno;
+            public int skoro;
+        }
+
+
+
         public struct slika
         {
             public PictureBox picture;
@@ -34,9 +42,20 @@ namespace Mastermind
 
 
 
-        public static string ProveriResenje(int[] niz, int[] rez)
+        public static resenje ProveriResenje(int[] niz, int[] rez)
         {
-            string rezultat = "";
+            resenje rezultat;
+            rezultat.tacno = 0;
+            rezultat.skoro = 0;
+
+            bool[] NizUsed = new bool[4];
+            bool[] RezUsed = new bool[4];
+
+            for (int i = 0; i < 4; i++)
+            {
+                NizUsed[i] = false;
+                RezUsed[i] = false;
+            }
 
 
 
@@ -44,9 +63,9 @@ namespace Mastermind
             { 
                 if (niz[i] == rez[i])
                 {
-                    rezultat += "tacno ";
-                    niz[i] = 777;
-                    rez[i] = 77;
+                    rezultat.tacno += 1;
+                    NizUsed[i] = true;
+                    RezUsed[i] = true;
                 }
             }
 
@@ -55,11 +74,11 @@ namespace Mastermind
             {
                 for (int j = 0; j < 4; j++)
                 {
-                    if (niz[i] == rez[j])
+                    if ((niz[i] == rez[j]) && NizUsed[i] == false && RezUsed[j] == false)
                     {
-                        rezultat += "skoro ";
-                        niz[i] = 777;
-                        rez[j] = 77;
+                        rezultat.skoro += 1;
+                        NizUsed[i] = true;
+                        RezUsed[j] = true;
                     }
                 }
             }
@@ -68,6 +87,25 @@ namespace Mastermind
 
             return rezultat;
         }
+
+        
+
+
+
+        public static int[,] KompjuterPogadja(int[] niz)
+        {
+            int[,] resenje = new int[6,4];
+
+
+
+
+
+            return resenje;
+
+        }
+
+
+
 
     }
 }

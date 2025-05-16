@@ -24,7 +24,13 @@ namespace Mastermind
 
         private void btnIgrajSam_Click(object sender, EventArgs e)
         {
-            IgracPogadja igracPogadja = new IgracPogadja();
+            IgracPogadja igracPogadja = new IgracPogadja("covek");
+            igracPogadja.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            IgracPogadja igracPogadja = new IgracPogadja("kompjuter");
             igracPogadja.ShowDialog();
         }
     }

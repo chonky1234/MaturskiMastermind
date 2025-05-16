@@ -172,6 +172,7 @@
             this.red2.Name = "red2";
             this.red2.Size = new System.Drawing.Size(517, 40);
             this.red2.TabIndex = 43;
+            this.red2.Load += new System.EventHandler(this.red2_Load);
             // 
             // red1
             // 
