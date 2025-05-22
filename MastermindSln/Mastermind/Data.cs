@@ -15,7 +15,7 @@ namespace Mastermind
 
 
 
-        public static int[,] KonacanRezultat = new int[6, 4];
+        public static int[,] KonacanRezultat = new int[100, 4];
         public static int red = 0;
         public static List<int[]> skup = new List<int[]>();
         public static int[] trenutni = new int[4];
@@ -138,8 +138,6 @@ namespace Mastermind
                 }
             }
 
-
-            
             trenutni = new int[] {0,0,1,1};
 
 
@@ -151,13 +149,8 @@ namespace Mastermind
             red++;
 
 
-
-
-
             kod = ProveriResenje(trenutni, niz);
-
-            
-            
+   
 
             while (skup.Count > 1)
             {
@@ -196,10 +189,10 @@ namespace Mastermind
                     return KonacanRezultat;
                 }
 
-                if (red == 6)
+/*                if (red == 6)
                 {
                     return KonacanRezultat;
-                }
+                }*/
 
             }
 
