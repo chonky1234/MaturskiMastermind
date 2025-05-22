@@ -14,6 +14,16 @@ namespace Mastermind
     {
 
 
+
+        public static int[,] KonacanRezultat = new int[6, 4];
+        public static int red = 0;
+        public static List<int[]> skup = new List<int[]>();
+        public static int[] trenutni = new int[4];
+        public static resenje kod = new resenje();
+        public static resenje privkod = new resenje();
+
+
+
         public struct resenje
         {
             public int tacno;
@@ -88,19 +98,112 @@ namespace Mastermind
             return rezultat;
         }
 
+
+
+
+
+        static void sredi()
+        {
+            for (int i = 0; i < skup.Count; i++)
+            {
+                if (skup[i].SequenceEqual(trenutni))
+                {
+                    skup.RemoveAt(i);
+                    break;
+                }
+            }
+        }
+
+
+
         
-
-
 
         public static int[,] KompjuterPogadja(int[] niz)
         {
-            int[,] resenje = new int[6,4];
+            red = 0;
+
+            for (int i = 0; i < 6; i++)
+            {
+                for (int j = 0; j < 6; j++)
+                {
+                    for (int r = 0; r < 6; r++)
+                    {
+                        for (int t = 0; t < 6; t++)
+                        {
+
+                            skup.Add(new int[] {i,j,r,t });
+
+                        }
+                    }
+                }
+            }
+
+
+            
+            trenutni = new int[] {0,0,1,1};
+
+
+            sredi();
+            for (int i = 0; i < 4; i++)
+            {
+                KonacanRezultat[red, i] = trenutni[i];
+            }
+            red++;
 
 
 
 
 
-            return resenje;
+            kod = ProveriResenje(trenutni, niz);
+
+            
+            
+
+            while (skup.Count > 1)
+            {
+                for (int i = 0; i < skup.Count; i++)
+                {
+
+                    privkod  = ProveriResenje(skup[i], trenutni);
+
+                    if ((privkod.tacno != kod.tacno) || (privkod.skoro != kod.skoro))
+                    {
+                        skup.RemoveAt(i);
+                    }
+
+                }
+
+
+
+                Random r = new Random();
+                int br = r.Next(skup.Count - 1);
+
+                trenutni = skup[br];
+                
+               
+                kod = ProveriResenje(trenutni, niz);
+
+
+
+                sredi();
+                for (int i = 0; i < 4; i++)
+                {
+                    KonacanRezultat[red, i] = trenutni[i];
+                }
+                red++;
+                if (kod.tacno == 4)
+                {
+                    return KonacanRezultat;
+                }
+
+                if (red == 6)
+                {
+                    return KonacanRezultat;
+                }
+
+            }
+
+            return KonacanRezultat;
 
         }
 

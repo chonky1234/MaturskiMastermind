@@ -22,3 +22,4 @@ D:\PROGRAMIRANJE\C#\MastermindMATURSKI\MaturskiMastermind\MastermindSln\Mastermi
 D:\PROGRAMIRANJE\C#\MastermindMATURSKI\MaturskiMastermind\MastermindSln\Mastermind\obj\Debug\Mastermind.exe
 D:\PROGRAMIRANJE\C#\MastermindMATURSKI\MaturskiMastermind\MastermindSln\Mastermind\obj\Debug\Mastermind.pdb
 D:\PROGRAMIRANJE\MaturskiMastermind\MastermindSln\Mastermind\obj\Debug\Mastermind.Red.resources
+D:\PROGRAMIRANJE\C#\MastermindMATURSKI\MaturskiMastermind\MastermindSln\Mastermind\obj\Debug\Mastermind.Red.resources

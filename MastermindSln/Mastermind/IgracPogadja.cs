@@ -226,7 +226,26 @@ namespace Mastermind
                 button6.Hide();
 
 
-                Data.KompjuterPogadja(redovi[7].indexBoja);
+                int[,] RezultatKompjutera = new int[6, 4];
+
+
+
+                RezultatKompjutera = Data.KompjuterPogadja(redovi[6].indexBoja);
+
+                string blabla = "";
+                for (int i = 0; i < 6; i++)
+                {
+                    for (int j = 0; j < 4; j++)
+                    {
+                        blabla += RezultatKompjutera[i,j].ToString();
+                    }
+
+                    MessageBox.Show(blabla);
+                    blabla = "";
+                }
+
+                
+
             }
 
         }
