@@ -32,7 +32,7 @@
             this.boja2 = new System.Windows.Forms.PictureBox();
             this.boja3 = new System.Windows.Forms.PictureBox();
             this.boja4 = new System.Windows.Forms.PictureBox();
-            this.resenje = new System.Windows.Forms.Label();
+            this.resenje = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.boja1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boja2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.boja3)).BeginInit();
@@ -41,47 +41,49 @@
             // 
             // boja1
             // 
-            this.boja1.Location = new System.Drawing.Point(3, 3);
+            this.boja1.Location = new System.Drawing.Point(0, 0);
             this.boja1.Name = "boja1";
-            this.boja1.Size = new System.Drawing.Size(40, 34);
+            this.boja1.Size = new System.Drawing.Size(57, 48);
             this.boja1.TabIndex = 0;
             this.boja1.TabStop = false;
             this.boja1.Click += new System.EventHandler(this.boja1_Click);
             // 
             // boja2
             // 
-            this.boja2.Location = new System.Drawing.Point(72, 3);
+            this.boja2.Location = new System.Drawing.Point(72, 0);
             this.boja2.Name = "boja2";
-            this.boja2.Size = new System.Drawing.Size(40, 34);
+            this.boja2.Size = new System.Drawing.Size(55, 48);
             this.boja2.TabIndex = 1;
             this.boja2.TabStop = false;
             this.boja2.Click += new System.EventHandler(this.boja2_Click);
             // 
             // boja3
             // 
-            this.boja3.Location = new System.Drawing.Point(142, 3);
+            this.boja3.Location = new System.Drawing.Point(142, 0);
             this.boja3.Name = "boja3";
-            this.boja3.Size = new System.Drawing.Size(40, 34);
+            this.boja3.Size = new System.Drawing.Size(60, 48);
             this.boja3.TabIndex = 2;
             this.boja3.TabStop = false;
             this.boja3.Click += new System.EventHandler(this.boja3_Click);
             // 
             // boja4
             // 
-            this.boja4.Location = new System.Drawing.Point(222, 3);
+            this.boja4.Location = new System.Drawing.Point(218, 0);
             this.boja4.Name = "boja4";
-            this.boja4.Size = new System.Drawing.Size(40, 34);
+            this.boja4.Size = new System.Drawing.Size(55, 48);
             this.boja4.TabIndex = 3;
             this.boja4.TabStop = false;
             this.boja4.Click += new System.EventHandler(this.boja4_Click);
             // 
             // resenje
             // 
-            this.resenje.AutoSize = true;
-            this.resenje.Location = new System.Drawing.Point(361, 3);
+            this.resenje.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.resenje.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resenje.Location = new System.Drawing.Point(301, 10);
             this.resenje.Name = "resenje";
-            this.resenje.Size = new System.Drawing.Size(0, 16);
-            this.resenje.TabIndex = 4;
+            this.resenje.ReadOnly = true;
+            this.resenje.Size = new System.Drawing.Size(100, 27);
+            this.resenje.TabIndex = 5;
             // 
             // Red
             // 
@@ -109,6 +111,6 @@
         private System.Windows.Forms.PictureBox boja2;
         private System.Windows.Forms.PictureBox boja3;
         private System.Windows.Forms.PictureBox boja4;
-        private System.Windows.Forms.Label resenje;
+        private System.Windows.Forms.TextBox resenje;
     }
 }

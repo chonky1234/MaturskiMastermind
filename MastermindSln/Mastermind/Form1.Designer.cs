@@ -34,9 +34,9 @@
             // 
             // btnIgrajSam
             // 
-            this.btnIgrajSam.Location = new System.Drawing.Point(511, 45);
+            this.btnIgrajSam.Location = new System.Drawing.Point(65, 118);
             this.btnIgrajSam.Name = "btnIgrajSam";
-            this.btnIgrajSam.Size = new System.Drawing.Size(221, 129);
+            this.btnIgrajSam.Size = new System.Drawing.Size(295, 203);
             this.btnIgrajSam.TabIndex = 0;
             this.btnIgrajSam.Text = "Kompjuter smisli, igrac pogadja";
             this.btnIgrajSam.UseVisualStyleBackColor = true;
@@ -44,11 +44,11 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(511, 240);
+            this.button2.Location = new System.Drawing.Point(452, 118);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(221, 129);
+            this.button2.Size = new System.Drawing.Size(295, 203);
             this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
+            this.button2.Text = "Igrac smisli, kompjuter pogadja";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 

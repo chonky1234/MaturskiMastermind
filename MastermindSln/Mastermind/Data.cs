@@ -15,7 +15,7 @@ namespace Mastermind
 
 
 
-        public static int[,] KonacanRezultat = new int[6, 4];
+        public static int[,] KonacanRezultat = new int[6,4];
         public static int red = 0;
         public static List<int[]> skup = new List<int[]>();
         public static List<int[]> skupSvihResenja = new List<int[]>();
@@ -59,8 +59,6 @@ namespace Mastermind
             braon,
             gugugaga
         }
-
-
 
 
         public static resenje ProveriResenje(int[] niz, int[] rez)
@@ -133,6 +131,16 @@ namespace Mastermind
         {
             red = 0;
 
+
+            for (int i = 0; i < 6; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    KonacanRezultat[i, j] = -1;
+                }
+            }
+
+
             for (int i = 0; i < 6; i++)
             {
                 for (int j = 0; j < 6; j++)
@@ -150,15 +158,6 @@ namespace Mastermind
                     }
                 }
             }
-
-
-
-
-
-
-
-
-
 
             trenutni = new int[] {0,0,1,1};
 
@@ -204,13 +203,6 @@ namespace Mastermind
                    
                 }
 
-
-
-
-
-
-
-
                 for (int i = 0; i < skup.Count; i++)
                 {
 
@@ -223,7 +215,6 @@ namespace Mastermind
                     }
 
                 }
-
 
 
                 for (int i = 0; i < skupSvihResenja.Count; i++)
@@ -313,23 +304,32 @@ namespace Mastermind
 
                 trenutni = skup[br];*/
 
-        
-
-
                 kod = ProveriResenje(trenutni, niz);
 
-
-
-                sredi();
                 for (int i = 0; i < 4; i++)
                 {
                     KonacanRezultat[red, i] = trenutni[i];
                 }
-                red++;
+
                 if (kod.tacno == 4)
                 {
+                    for (int i = red+1; i < 6; i++)
+                    {
+                        for (int j = 0; j < 4; j++)
+                        {
+
+                        }
+                    }
+
                     return KonacanRezultat;
                 }
+
+
+
+                sredi();
+               
+                red++;
+                
 
                 if (red == 6)
                 {

@@ -35,7 +35,7 @@ namespace Mastermind
 
             if (igrac == "covek")
             {
-
+                button8.Text = "Pokazi resenje";
                 Setup();
                 GenerisiBoje();
 
@@ -44,12 +44,11 @@ namespace Mastermind
 
             if (igrac == "kompjuter")
             {
+                button8.Text = "Potvrdi kombinaciju";
                 Setup();
                 red = 6;
                 button7.Hide();
             }
-
-
         }
 
 
@@ -63,6 +62,11 @@ namespace Mastermind
             redovi[4] = red5;
             redovi[5] = red6;
             redovi[6] = resenje = red7;
+
+            for (int i = 1; i < redovi.Length; i++)
+            {
+                redovi[i].Enabled = false;
+            }
         }
 
         void GenerisiBoje()
@@ -205,7 +209,9 @@ namespace Mastermind
             kolona = 0;
             if (red<6)
             {
+                redovi[red].Enabled = false;
                 red++;
+                redovi[red].Enabled = true;
             }
         }
 
@@ -257,6 +263,11 @@ namespace Mastermind
         }
 
         private void red2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void red7_Load(object sender, EventArgs e)
         {
 
         }
