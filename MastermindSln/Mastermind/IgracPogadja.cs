@@ -12,6 +12,12 @@ namespace Mastermind
 {
     public partial class IgracPogadja : Form
     {
+        int IgracevoResenje = 0;
+        public bool nastavi;
+        public int[,] RezultatKompjutera = new int[6, 4];
+        public int[] drzac = Data.PocniKompjuterSredjuje();
+
+
         public Red[] redovi = new Red[7];
 
         Red resenje;
@@ -36,6 +42,11 @@ namespace Mastermind
             if (igrac == "covek")
             {
                 button8.Text = "Pokazi resenje";
+                button9.Hide();
+                button10.Hide();
+                button11.Hide();
+                button12.Hide();
+
                 Setup();
                 GenerisiBoje();
 
@@ -44,10 +55,27 @@ namespace Mastermind
 
             if (igrac == "kompjuter")
             {
+                nastavi = false;
                 button8.Text = "Potvrdi kombinaciju";
                 Setup();
-                red = 6;
+                //red = 6;
+                button1.Hide();
+                button2.Hide();
+                button3.Hide();
+                button4.Hide();
+                button5.Hide();
+                button6.Hide();
                 button7.Hide();
+
+
+                for (int i = 0; i < 4; i++)
+                {
+                    RezultatKompjutera[0, i] = drzac[i];
+
+                    redovi[0].StaviBoju(drzac[i], i);
+
+                }
+
             }
         }
 
@@ -124,6 +152,10 @@ namespace Mastermind
                     return;
                 }
             }
+
+
+
+ 
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -169,50 +201,61 @@ namespace Mastermind
 
         private void button7_Click(object sender, EventArgs e)
         {
-        /*    for (int i = 0; i < 4; i++)
-            {
-                if (Polja[red,i].picture.BackColor == DefaultBackColor)
+            /*    for (int i = 0; i < 4; i++)
                 {
-                    MessageBox.Show("popuni boje");
-                    return;
+                    if (Polja[red,i].picture.BackColor == DefaultBackColor)
+                    {
+                        MessageBox.Show("popuni boje");
+                        return;
+                    }
+
+                }*/
+
+
+            if (redovi[red].slike[3].BackColor != DefaultBackColor)
+            {
+                rezultat = "";
+
+                int[] rez = new int[4];
+                int[] niz = new int[4];
+
+                for (int i = 0; i < 4; i++)
+                {
+                    rez[i] = resenje.indexBoja[i];
                 }
 
-            }*/
+                for (int i = 0; i < 4; i++)
+                {
+                    niz[i] = redovi[red].indexBoja[i];
+                }
 
 
 
-            rezultat = "";
 
-            int[] rez = new int[4];
-            int[] niz = new int[4];
+                Data.resenje t = Data.ProveriResenje(niz, rez);
 
-            for (int i = 0; i < 4; i++)
-            {
-                rez[i] = resenje.indexBoja[i];
+
+
+                if (t.tacno == 4)
+                {
+                    MessageBox.Show("Pogodili ste!");
+                    red7.Show();
+                }
+                redovi[red].StaviResenje(t.tacno + " " + t.skoro);
+
+                kolona = 0;
+                if (red < 6)
+                {
+                    redovi[red].Enabled = false;
+                    red++;
+                    redovi[red].Enabled = true;
+                }
             }
-
-            for (int i = 0; i < 4; i++)
+            else
             {
-                niz[i] = redovi[red].indexBoja[i];
+                MessageBox.Show("Unesi 4 boje");
             }
-
-
-
-
-            Data.resenje t = Data.ProveriResenje(niz, rez);
-
-
-
-
-            redovi[red].StaviResenje(t.tacno + " " + t.skoro);
-
-            kolona = 0;
-            if (red<6)
-            {
-                redovi[red].Enabled = false;
-                red++;
-                redovi[red].Enabled = true;
-            }
+           
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -224,19 +267,21 @@ namespace Mastermind
 
             if (player == "kompjuter")
             {
-                button1.Hide();
-                button2.Hide();
-                button3.Hide();
-                button4.Hide();
-                button5.Hide();
-                button6.Hide();
+                if (red<6)
+                {
+                    red++;
+                }
+                nastavi=true;
 
 
-                int[,] RezultatKompjutera = new int[6, 4];
+                 drzac = Data.SledeciKorakKompjuterPogadja(IgracevoResenje);
+                for (int j = 0; j < 4; j++)
+                {
+                    RezultatKompjutera[red, j] = drzac[j];
+                    redovi[red].StaviBoju(drzac[j],j);
+                }
 
-
-
-                RezultatKompjutera = Data.KompjuterPogadja(redovi[6].indexBoja);
+/*                RezultatKompjutera = Data.KompjuterPogadja(redovi[6].indexBoja);
 
                 string blabla = "";
                 for (int i = 0; i < 6; i++)
@@ -247,11 +292,12 @@ namespace Mastermind
                         //blabla += RezultatKompjutera[i,j].ToString();
                     }
 
-                   /* MessageBox.Show(blabla);
-                    blabla = "";*/
-                }
+                   *//* MessageBox.Show(blabla);
+                    blabla = "";*//*
+                }*/
 
-                
+                IgracevoResenje = 0;
+
 
             }
 
@@ -269,6 +315,36 @@ namespace Mastermind
 
         private void red7_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void red4_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            IgracevoResenje += 10;
+            redovi[red].StaviResenje(IgracevoResenje.ToString());
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            IgracevoResenje += 1;
+            redovi[red].StaviResenje(IgracevoResenje.ToString());
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            IgracevoResenje -= 10;
+            redovi[red].StaviResenje(IgracevoResenje.ToString());
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            IgracevoResenje -= 1;
+            redovi[red].StaviResenje(IgracevoResenje.ToString());
 
         }
     }

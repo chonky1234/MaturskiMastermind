@@ -36,6 +36,8 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.red7 = new Mastermind.Red();
             this.red6 = new Mastermind.Red();
             this.red5 = new Mastermind.Red();
@@ -43,6 +45,8 @@
             this.red3 = new Mastermind.Red();
             this.red2 = new Mastermind.Red();
             this.red1 = new Mastermind.Red();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -57,7 +61,7 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Lime;
+            this.button2.BackColor = System.Drawing.Color.Green;
             this.button2.Location = new System.Drawing.Point(248, 339);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(58, 42);
@@ -87,7 +91,7 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.button5.BackColor = System.Drawing.Color.Purple;
             this.button5.Location = new System.Drawing.Point(504, 339);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(58, 42);
@@ -97,7 +101,7 @@
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.button6.BackColor = System.Drawing.Color.Fuchsia;
             this.button6.Location = new System.Drawing.Point(592, 339);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(58, 42);
@@ -107,7 +111,7 @@
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(688, 320);
+            this.button7.Location = new System.Drawing.Point(689, 320);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 81);
             this.button7.TabIndex = 34;
@@ -124,6 +128,26 @@
             this.button8.Text = "button8";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(261, 387);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(75, 69);
+            this.button9.TabIndex = 49;
+            this.button9.Text = "Tacni";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(363, 387);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(75, 69);
+            this.button10.TabIndex = 50;
+            this.button10.Text = "Skoro";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // red7
             // 
@@ -153,6 +177,7 @@
             this.red4.Name = "red4";
             this.red4.Size = new System.Drawing.Size(517, 40);
             this.red4.TabIndex = 45;
+            this.red4.Load += new System.EventHandler(this.red4_Load);
             // 
             // red3
             // 
@@ -177,11 +202,35 @@
             this.red1.TabIndex = 42;
             this.red1.Load += new System.EventHandler(this.red1_Load);
             // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(261, 462);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(75, 34);
+            this.button11.TabIndex = 51;
+            this.button11.Text = "-";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(363, 462);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(75, 34);
+            this.button12.TabIndex = 52;
+            this.button12.Text = "-";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
             // IgracPogadja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 508);
+            this.Controls.Add(this.button12);
+            this.Controls.Add(this.button11);
+            this.Controls.Add(this.button10);
+            this.Controls.Add(this.button9);
             this.Controls.Add(this.red7);
             this.Controls.Add(this.red6);
             this.Controls.Add(this.red5);
@@ -220,5 +269,9 @@
         private Red red5;
         private Red red6;
         private Red red7;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
     }
 }

@@ -39,10 +39,10 @@ namespace Mastermind
 
             if (boja == 0) slike[kolona].BackColor = Color.Yellow;
             if (boja == 1) slike[kolona].BackColor = Color.Green;
-            if (boja == 2) slike[kolona].BackColor = Color.Blue;
+            if (boja == 2) slike[kolona].BackColor = Color.Cyan;
             if (boja == 3) slike[kolona].BackColor = Color.Red;
             if (boja == 4) slike[kolona].BackColor = Color.Purple;
-            if (boja == 5) slike[kolona].BackColor = Color.Brown;
+            if (boja == 5) slike[kolona].BackColor = Color.Fuchsia;
 
             indexBoja[kolona] = boja;
             /* zuta,
