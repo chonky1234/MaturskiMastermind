@@ -101,7 +101,7 @@
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.Fuchsia;
+            this.button6.BackColor = System.Drawing.Color.SaddleBrown;
             this.button6.Location = new System.Drawing.Point(592, 339);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(58, 42);
@@ -135,7 +135,7 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(75, 69);
             this.button9.TabIndex = 49;
-            this.button9.Text = "Tacni";
+            this.button9.Text = "Tacno";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
@@ -185,6 +185,7 @@
             this.red3.Name = "red3";
             this.red3.Size = new System.Drawing.Size(517, 40);
             this.red3.TabIndex = 44;
+            this.red3.Load += new System.EventHandler(this.red3_Load);
             // 
             // red2
             // 
@@ -226,6 +227,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 508);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);

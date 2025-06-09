@@ -17,12 +17,8 @@ namespace Mastermind
         public int[,] RezultatKompjutera = new int[6, 4];
         public int[] drzac = Data.PocniKompjuterSredjuje();
 
-
         public Red[] redovi = new Red[7];
-
         Red resenje;
-
-        //Data.slika[,] Polja = new Data.slika[6, 4];
         int red = 0;
         public static int kolona = 0;
         string rezultat;
@@ -41,7 +37,7 @@ namespace Mastermind
 
             if (igrac == "covek")
             {
-                button8.Text = "Pokazi resenje";
+                button8.Hide();
                 button9.Hide();
                 button10.Hide();
                 button11.Hide();
@@ -105,7 +101,7 @@ namespace Mastermind
 
             for (int i = 0; i < 4; i++)
             {
-                b = r.Next(1, 6);
+                b = r.Next(0, 5);
 
                 resenje.StaviBoju(b, i);
                 /*switch (b)
@@ -152,51 +148,41 @@ namespace Mastermind
                     return;
                 }
             }
-
-
-
- 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             namestiKolonu();
             redovi[red].StaviBoju(0, kolona);
-            namestiKolonu();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             namestiKolonu();
             redovi[red].StaviBoju(1, kolona);
-            namestiKolonu();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             namestiKolonu();
             redovi[red].StaviBoju(2, kolona);
-            namestiKolonu();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             namestiKolonu();
             redovi[red].StaviBoju(3, kolona);
-            namestiKolonu();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             namestiKolonu();
             redovi[red].StaviBoju(4, kolona);
-            namestiKolonu();
         }
         private void button6_Click(object sender, EventArgs e)
         {
             namestiKolonu();
             redovi[red].StaviBoju(5, kolona);
-            namestiKolonu();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -236,7 +222,7 @@ namespace Mastermind
 
 
 
-                if (t.tacno == 4)
+                if (t.tacno == 4 && red < 6)
                 {
                     MessageBox.Show("Pogodili ste!");
                     red7.Show();
@@ -249,6 +235,12 @@ namespace Mastermind
                     redovi[red].Enabled = false;
                     red++;
                     redovi[red].Enabled = true;
+                }
+
+                if (red == 6 && t.tacno != 4)
+                {
+                    MessageBox.Show("Niste pogodili tajnu kombinaciju");
+                    red7.Show();
                 }
             }
             else
@@ -274,7 +266,7 @@ namespace Mastermind
                 nastavi=true;
 
 
-                 drzac = Data.SledeciKorakKompjuterPogadja(IgracevoResenje);
+                drzac = Data.SledeciKorakKompjuterPogadja(IgracevoResenje);
                 for (int j = 0; j < 4; j++)
                 {
                     RezultatKompjutera[red, j] = drzac[j];
@@ -345,6 +337,11 @@ namespace Mastermind
         {
             IgracevoResenje -= 1;
             redovi[red].StaviResenje(IgracevoResenje.ToString());
+
+        }
+
+        private void red3_Load(object sender, EventArgs e)
+        {
 
         }
     }

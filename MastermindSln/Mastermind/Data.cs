@@ -63,8 +63,6 @@ namespace Mastermind
         public static int[] PocniKompjuterSredjuje()
         {
             red = 0;
-
-
             for (int i = 0; i < 6; i++)
             {
                 for (int j = 0; j < 4; j++)
@@ -72,7 +70,6 @@ namespace Mastermind
                     KonacanRezultat[i, j] = -1;
                 }
             }
-
 
             for (int i = 0; i < 6; i++)
             {
@@ -82,7 +79,6 @@ namespace Mastermind
                     {
                         for (int t = 0; t < 6; t++)
                         {
-
                             skup.Add(new int[] { i, j, r, t });
                             skupSvihResenja.Add(new int[] { i, j, r, t });
                             brojKodova.Add(new int[14]);
@@ -93,7 +89,6 @@ namespace Mastermind
             }
 
             trenutni = new int[] { 0, 0, 1, 1 };
-
 
             sredi();
             for (int i = 0; i < 4; i++)
@@ -197,12 +192,12 @@ namespace Mastermind
             }
 
 
-            int max2 = najveciBrojKodova.Min();
+            int min = najveciBrojKodova.Min();
 
 
             for (int i = 0; i < najveciBrojKodova.Count; i++)
             {
-                if (najveciBrojKodova[i] == max2)
+                if (najveciBrojKodova[i] == min)
                 {
                     indexi.Add(i);
                 }
@@ -290,7 +285,6 @@ namespace Mastermind
             }
 
 
-
             for (int i = 0; i < 4; i++)
             { 
                 if (niz[i] == rez[i])
@@ -314,7 +308,6 @@ namespace Mastermind
                     }
                 }
             }
-
 
 
             return rezultat;

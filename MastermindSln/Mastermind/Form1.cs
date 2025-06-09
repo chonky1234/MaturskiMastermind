@@ -22,16 +22,18 @@ namespace Mastermind
 
         }
 
-        private void btnIgrajSam_Click(object sender, EventArgs e)
+        private void btnIgracPogadja_Click(object sender, EventArgs e)
         {
             IgracPogadja igracPogadja = new IgracPogadja("covek");
             igracPogadja.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+
+        private void btnKompjuterPogadja_Click(object sender, EventArgs e)
         {
             IgracPogadja igracPogadja = new IgracPogadja("kompjuter");
             igracPogadja.ShowDialog();
         }
+
     }
 }
