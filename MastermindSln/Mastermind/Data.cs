@@ -185,16 +185,12 @@ namespace Mastermind
                     {
                         max = brojKodova[i][j];
                     }
-
                 }
                 najveciBrojKodova[i] = max;
-
             }
 
 
             int min = najveciBrojKodova.Min();
-
-
             for (int i = 0; i < najveciBrojKodova.Count; i++)
             {
                 if (najveciBrojKodova[i] == min)
