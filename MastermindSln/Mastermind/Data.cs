@@ -139,7 +139,6 @@ namespace Mastermind
 
             for (int i = 0; i < skup.Count; i++)
             {
-
                 privkod = ProveriResenje(trenutni, skup[i]);
 
                 if ((privkod.tacno != kod.tacno) || (privkod.skoro != kod.skoro))
@@ -147,7 +146,6 @@ namespace Mastermind
                     skup.RemoveAt(i);
                     i--;
                 }
-
             }
 
 
@@ -213,12 +211,10 @@ namespace Mastermind
                         flag = true;
                         break;
                     }
-
                     if (flag == true)
                     {
                         break;
                     }
-
                 }
             }
 
